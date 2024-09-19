@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 
+            position
+                static
+
+                absoulute
+                relative
+                fixed
+                sticky
+        */
+        .parent {
+            background-color: gray;
+            height: 200px;
+            width: 200px;
+            position: relative;
+        }
+
+        .box-1 {
+            background-color: red;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 400px;"></div>
+    <div class="parent">
+        <div class="box-1">absolute</div>
+    </div>
+    <div style="height: 50px; width: 50px;background-color: blue;position: fixed;top: 0; right: 0;">fixed</div>
+    <div style="height: 50px; background-color: orange;position: sticky; top: 0;">sticky</div>
+    <div style="height: 2000px;"></div>
+
+</body>
+
+</html>
