@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            margin: 50px;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        button {
+            display: none;
+        }
+
+        @media(max-width:768px) {
+            button {
+                display: inline-block;
+            }
+
+            a {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4>SKILLHUB</h4>
+        <div>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <button>menu</button>
+        </div>
+    </div>
+</body>
+
+</html>
