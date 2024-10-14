@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // la
+        // ch sambhaji nagar
+        // mi
+        // c series
+        // berlin
+        const brands = [
+            {
+                name: "apple",
+                country: "usa",
+                models: ["13", "14", "15"],
+                sells: [
+                    {
+                        country: "india",
+                        hq: "delhi",
+                        cities: ["pune", "mumbai"]
+                    },
+                    {
+                        country: "usa",
+                        hq: "new york",
+                        cities: ["boston", "la"]
+                    },
+                ]
+            },
+            {
+                name: "moto",
+                country: "china",
+                models: ["a", "b", "c series"],
+                sells: [
+                    {
+                        country: "india",
+                        hq: "mumbai",
+                        cities: ["cht. sambhaji nagar", "nashik"]
+                    },
+                    {
+                        country: "germany",
+                        hq: "berlin",
+                        cities: ["abc", "xyz"]
+                    },
+                ]
+            },
+            {
+                name: "mi",
+                country: "china",
+                models: ["p"],
+                sells: [
+                    {
+                        country: "india",
+                        hq: "nagpur",
+                        cities: ["kolhapur", "ratnagiri"]
+                    },
+                    {
+                        country: "china",
+                        hq: "beijing",
+                        cities: ["ccc", "ddd"]
+                    },
+                ]
+            },
+        ]
+
+        console.log(brands[0].sells[1].cities[1])
+
+        const arr = ["dell", "hp", "apple", "msi"]
+        // arr.splice(1, 0)
+        // arr.splice(0, 1)
+        arr.splice(1, 2, 3)
+        console.warn(arr)
+
+
+    </script>
+</body>
+
+</html>

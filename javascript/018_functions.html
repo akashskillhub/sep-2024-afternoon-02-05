@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            1 how to create a function
+            2 function call
+            3 function argument / parameter
+            4 function return
+        */
+        function test() {
+            console.log("hello");
+        }
+
+        test() // call
+        test() // call
+
+        console.clear()
+
+        function demo() {
+            console.warn("hello from demo")
+        }
+        demo()
+        console.clear()
+        //               👇 parameter
+        function sayHello(x) {
+            console.log("hello", x)
+        }
+        sayHello("john") // john => argument
+        sayHello("ross")
+        console.clear()
+
+        function sum(num1, num2) {
+            console.log(num1 + num2)
+        }
+        sum(10, 20)
+        sum("10", 50)
+        console.clear()
+        function mul(n1, n2) {
+            console.log(n1 * n2)
+        }
+        mul(10, 5) // 50
+        console.clear()
+
+        function getTax(n1, n2) {
+            return n1 + n2
+        }
+        const x = getTax(5, 2) // x = return of getTax()
+        console.log(x)
+
+
+    </script>
+</body>
+
+</html>
