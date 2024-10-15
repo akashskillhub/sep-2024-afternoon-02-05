@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // array || object || function
+        const obj = { name: "ross" } // krantichowk
+        const obj1 = { name: "ross" } // cidco
+        console.log(obj == obj1) // false
+
+        function test() {
+            console.log("demo function called")
+            return 10
+        }
+        const x = test() // return of test function
+        const y = test  // function address
+        // console.log(y)
+        y()
+        console.clear()
+
+
+        function fn(arg, n1) {
+            return arg(n1) // 10
+        }
+        function getData(p1) {
+            return p1 + p1
+        }
+        const z = fn(getData, 5)
+        console.log(z)
+        // DOM
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
