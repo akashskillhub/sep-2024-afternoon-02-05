@@ -8,14 +8,14 @@
 </head>
 
 <body>
-
+    <div id="root"></div>
     <script>
-        const arr = ["dell", "hp", "apple", "msi"]
-        const x = arr.slice(1, 3)
-        // console.log(x)
-        arr.splice(1, 3)
-        console.log(arr)
+        const x = document.getElementById("root")
+        const arr = ["dell", "hp", "apple"]
 
+        for (let item of arr) {
+            x.innerHTML += "<h1>" + item + "</h1>"
+        }
 
     </script>
 </body>

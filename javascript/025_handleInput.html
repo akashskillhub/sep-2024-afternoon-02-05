@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="test">
+    <input type="number" id="test1">
+    <h1 id="result"></h1>
+
+    <button onclick="demo()">click me</button>
+    <script>
+        function demo() {
+            const z = document.getElementById("result")
+            const x = +document.getElementById("test").value
+            const y = +document.getElementById("test1").value
+
+            z.innerHTML = x + y
+            // console.log(x.value + y.value)
+            // console.log(+x.value + +y.value)
+
+
+        }
+    </script>
+</body>
+
+</html>

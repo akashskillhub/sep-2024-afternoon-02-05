@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="root"></h1>
+    <input type="number" id="num">
+    <button onclick="handleShow()">show week day</button>
+    <button onclick="handleShowBetter()">better</button>
+    <!-- handleShow -->
+    <script>
+        function handleShow() {
+            const x = +document.getElementById("num").value
+            if (x === 1) {
+                console.log("Monday")
+            } else if (x === 2) {
+                console.log("Tue")
+            } else if (x === 3) {
+                console.log("Wednesday")
+            } else if (x === 4) {
+                console.log("Thursday")
+            } else if (x === 5) {
+                console.log("Friday")
+            } else if (x === 6) {
+                console.log("Saturday")
+            } else if (x === 7) {
+                console.log("Sunday")
+            } else {
+                console.log("INVALID NUMBER")
+            }
+            // if (x === 2) {
+            //     console.log("Tuesday")
+            // }
+            // if (x === 3) {
+            //     console.log("Wednesday")
+            // }
+            // if (x === 4) {
+            //     console.log("Thursday")
+            // }
+            // if (x === 5) {
+            //     console.log("Friday")
+            // }
+            // if (x === 6) {
+            //     console.log("Saturday")
+            // }
+            // if (x === 7) {
+            //     console.log("Sunday")
+            // } else {
+            //     console.log("INVALID NUMBER")
+            // }
+
+        }
+        function handleShowBetter() {
+            const x = +document.getElementById("num").value
+            const output = document.getElementById("root")
+
+            switch (x) {
+                case 1: output.innerHTML = ("mon"); break // case x ===1
+                case 2: output.innerHTML = ("tue"); break
+                case 3: output.innerHTML = ("wed"); break
+                case 4: output.innerHTML = ("thu"); break
+                case 5: output.innerHTML = ("fri"); break
+                case 6: output.innerHTML = ("sat"); break
+                case 7: output.innerHTML = ("sun"); break
+                default: output.innerHTML = ("INVALID")
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>

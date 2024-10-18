@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="input-group">
+            <input type="text" class="form-control" id="task">
+            <button onclick="handleSubmit()" class="btn btn-dark">add</button>
+        </div>
+        <div id="root"></div>
+    </div>
+
+    <script>
+        const arr = []
+        function handleSubmit() {
+            const task = document.getElementById("task").value
+            arr.unshift(task)
+            let str = ""
+            for (const item of arr) {
+                str += '<div class="alert alert-success">' + item + "</div>"
+            }
+            document.getElementById('root').innerHTML = str
+
+
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
