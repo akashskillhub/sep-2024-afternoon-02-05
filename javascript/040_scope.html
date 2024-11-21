@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // functional           var
+        // block                let const
+
+        if (true) {
+            var z = 10
+            let x = 10
+            console.log("x", x)
+            console.log("z", z)
+        }
+        console.log("z", z)
+        // console.log(x)  // ERROR
+
+        function test() {
+            var fname = "ross"
+            let f_name = "ross"
+            const fName = "ross"
+        }
+        console.clear()
+        console.log(fname) // ERROR
+        // console.log(f_name) // ERROR
+        // console.log(fName) // ERROR
+
+
+    </script>
+</body>
+
+</html>

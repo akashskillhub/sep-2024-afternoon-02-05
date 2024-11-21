@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .success {
+            padding: 10px;
+            border: 1px solid gray;
+            width: 300px;
+            border-radius: 5px;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .container>.row>.col-sm-6.offset-sm-3 -->
+    <div class="success d-none" id="toast">Fetch Success</div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div class="card">
+                    <div class="card-header">Weather App</div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" id="city">
+                            <button class="btn btn-dark" onclick="showWeather()">show weather</button>
+                        </div>
+
+                        <div id="root"></div>
+                    </div>
+                    <!-- <div class="card-footer">footer</div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const KEY = "3dea525bd734a6c4f89ab2fb9e025109"
+        // https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+        // https://api.openweathermap.org/data/2.5/weather?q=dubai&appid=3dea525bd734a6c4f89ab2fb9e025109
+
+        const showWeather = () => {
+            const city = document.getElementById("city").value
+
+            document.getElementById("root").innerHTML = `
+                <div class="spinner spinner-border"></div>
+                please wait... fetching
+            `
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KEY}`)
+                .then(res => res.json())
+                .then(data => {
+                    const icon = data.weather[0].icon
+                    const main = data.weather[0].main
+                    const desc = data.weather[0].description
+                    let temp = data.main.temp - 273.15
+                    temp = temp.toFixed(2)
+
+                    document.getElementById("root").innerHTML = `
+                        <h1> main ${main} </h1>
+                        <p> desc ${desc} </p>
+                        <p> temp ${temp} °C</p>
+                        <img  src="http://openweathermap.org/img/w/${icon}.png"/>
+                    `
+                    document.getElementById("city").value = ""
+
+                    document.getElementById("toast").classList.remove("d-none")
+
+                    setTimeout(() => {
+                        document.getElementById("toast").classList.add("d-none")
+                    }, 2000);
+                })
+                .catch(err => {
+                    document.getElementById("root").innerHTML = "something went wrong"
+                    console.log(err)
+                })
+
+        }
+        // http://openweathermap.org/img/w/04d.png
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

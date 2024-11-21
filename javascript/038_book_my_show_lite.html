@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap By SKILLHUB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .seat {
+            height: 50px;
+            width: 50px;
+            border: 1px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .seat:hover {
+            border: 1px solid green;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2">
+                <div class="card">
+                    <div class="card-header">Book My Show</div>
+                    <div class="card-body">
+                        <div id="root"></div>
+                        <div class="d-flex gap-2 justify-content-center">
+                            <!-- .seat{s-$}*10 -->
+                            <div id="s-1" onclick="handleSeat(1)" class="seat">S-1</div>
+                            <div id="s-2" onclick="handleSeat(2)" class="seat">S-2</div>
+                            <div id="s-3" onclick="handleSeat(3)" class="seat">S-3</div>
+                            <div id="s-4" onclick="handleSeat(4)" class="seat">S-4</div>
+                            <div id="s-5" onclick="handleSeat(5)" class="seat">S-5</div>
+                            <div id="s-6" onclick="handleSeat(6)" class="seat">S-6</div>
+                            <div id="s-7" onclick="handleSeat(7)" class="seat">S-7</div>
+                            <div id="s-8" onclick="handleSeat(8)" class="seat">S-8</div>
+                            <div id="s-9" onclick="handleSeat(9)" class="seat">S-9</div>
+                            <div id="s-10" onclick="handleSeat(10)" class="seat">S-10</div>
+
+                        </div>
+                    </div>
+                    <!-- <div class="card-footer">footer</div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleSeat(arg) {
+            const el = document.getElementById(`s-${arg}`)
+            if (el.classList.contains("bg-success")) {
+                // console.log("ahe");
+                el.classList.remove("bg-success")
+            } else {
+                // console.log("nahi")
+                el.classList.add("bg-success")
+
+            }
+
+            const selectedSeats = document.querySelectorAll(".bg-success")
+            console.log(`you have selected ${selectedSeats.length} seats`)
+            document.getElementById("root").innerHTML = `you have selected ${selectedSeats.length} seats and est price is ${selectedSeats.length * 500}`
+
+        }
+
+        // es6
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

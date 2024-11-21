@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function test() {
+            var x = 10
+            let y = 10
+            if (true) {
+                var x = 20 // ✅ var is accessible outside if
+                let y = 20 // ❌ NOT accessible outside if
+            }
+            console.log(x)
+            console.log(y) // 10
+        }
+        test()
+    </script>
+</body>
+
+</html>

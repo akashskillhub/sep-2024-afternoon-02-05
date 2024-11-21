@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //            👇 rest oprator => creates array of values
+        function test(...arg) {
+            let sum = 0
+            for (const item of arg) {
+                sum = sum + item
+            }
+            return sum
+        }
+        const x = test(10, 20, 30, 40) // 100
+        console.log(x)
+
+        console.clear()
+
+        const arr = ["dell", "hp", "apple"]
+
+        console.log(arr)
+        console.log(...arr) // spread oprator
+
+        console.clear()
+
+        const users = ["ross", "kate"]
+        const aa = [...users] // 👈 shalow copy
+        aa.push("bill")
+        console.log(aa)
+        console.log(users)
+
+        console.clear()
+
+        const stud = { name: "aa", age: 20 }
+        const nn = { ...stud } // shalow copy 
+        nn.name = "ethan"
+        console.log(nn)
+        console.log(stud)
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
