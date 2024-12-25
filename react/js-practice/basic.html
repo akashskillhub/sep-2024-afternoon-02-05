@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const arr = [
+            { name: "dell", model: "xps", price: 100 },
+            { name: "hp", model: "victus", price: 120 },
+            { name: "apple", model: "air", price: 170 },
+
+            { name: "dell", model: "inspiron", price: 270 },
+            { name: "hp", model: "envy", price: 570 },
+            { name: "apple", model: "pro", price: 1170 },
+        ]
+        //                👇 returns single value
+        // const x = arr.find(item => item.name === "apple")
+        // if price is gre than 150 else
+        // if price is gre than 150 and less tahn 200
+        //                👇 returns array
+        // const x = arr.filter(item => item.price > 150 && item.price < 200)
+
+        /*
+        apple price less tahn 500
+        */
+        // price more than 150
+        // dell kiva hp
+
+
+        // const x = arr.filter(item => (item.name === "dell" || item.name === "hp") && item.price > 150)
+        // const x = arr.filter(item => item.name !== "apple")
+        // console.log(x)
+
+        // data transform
+        // const x = arr.map(item => {
+        //     return { ...item, price: item.price + 50 }
+        // })
+        const x = arr.map(item => {
+            return `<h1>${item.name}</h1><p>${item.price}</p>`
+        })
+        console.log(x)
+
+
+        // const obj = {
+        //     city: "london",
+        //     name: "ethan",
+        //     age: 200,
+        //     name: "bill",
+        //     age: 50
+        // }
+        // // const x = obj // not copy
+        // const x = { ...obj } //  copy
+        // x.name = "john"
+        // console.log(x)
+        // console.log(obj)
+
+
+    </script>
+</body>
+
+</html>

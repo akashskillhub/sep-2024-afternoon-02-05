@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "title": "learn react",
+      "desc": "react asd as",
+      "hero": "https://images.unsplash.com/photo-1719937051058-63705ed35502?q=80&w=1472&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": 2
+    },
+    {
+      "title": "learn web dev",
+      "desc": " web is good",
+      "hero": "https://images.unsplash.com/photo-1730247147351-6db1dc7b2dbc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": 3
+    },
+    {
+      "title": "adskajnd",
+      "desc": "sd;fk;sdf",
+      "hero": "https://images.unsplash.com/photo-1727012030934-2b51c5a31c5f?q=80&w=1501&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "id": 4
+    }
+  ]
+}
