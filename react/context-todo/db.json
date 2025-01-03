@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "name": "john",
+      "email": "john@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "ross",
+      "email": "ross@gmail.com",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "todos": [
+    {
+      "task": "learn html",
+      "desc": "sdfsdf",
+      "priority": "low",
+      "id": 1
+    },
+    {
+      "task": "learn css",
+      "desc": "DAFDS",
+      "priority": "medium",
+      "id": 2
+    },
+    {
+      "task": "Learn Redux",
+      "desc": "FDGDF",
+      "priority": "medium",
+      "id": 3
+    }
+  ]
+}
