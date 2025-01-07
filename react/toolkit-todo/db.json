@@ -1,0 +1,22 @@
+{
+  "notes": [
+    {
+      "title": "learn mern stack",
+      "desc": "the best",
+      "priority": "high",
+      "id": 1
+    },
+    {
+      "title": "learn react native",
+      "desc": "asdas",
+      "priority": "high",
+      "id": 2
+    },
+    {
+      "title": "SDFS",
+      "desc": "SAADFSDF",
+      "priority": "medium",
+      "id": 3
+    }
+  ]
+}
