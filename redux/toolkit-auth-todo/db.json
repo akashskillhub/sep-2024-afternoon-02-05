@@ -1,0 +1,30 @@
+{
+  "notes": [
+    {
+      "task": "Learn Redux",
+      "desc": "dfsdf",
+      "priority": "low",
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "name": "akash",
+      "email": "akash@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "kate",
+      "email": "kate@gmail.com",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "name": "john",
+      "email": "john@gmail.com",
+      "password": "123",
+      "id": 3
+    }
+  ]
+}
