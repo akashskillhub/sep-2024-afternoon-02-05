@@ -1,0 +1,48 @@
+{
+    "notes": [
+        {
+            "id": 1,
+            "task": "Learn HTML"
+        },
+        {
+            "id": 2,
+            "task": "Learn CSS"
+        },
+        {
+            "id": 3,
+            "task": "Learn Bootstrap"
+        },
+        {
+            "id": 4,
+            "task": "Learn Tailwind CSS"
+        },
+        {
+            "id": 5,
+            "task": "Learn JavaScript"
+        },
+        {
+            "id": 6,
+            "task": "Learn ES6+"
+        },
+        {
+            "id": 7,
+            "task": "Learn React"
+        },
+        {
+            "id": 8,
+            "task": "Learn Redux"
+        },
+        {
+            "id": 9,
+            "task": "Learn RTK Query"
+        },
+        {
+            "id": 10,
+            "task": "Learn Node Js"
+        },
+        {
+            "id": 11,
+            "task": "Learn React Native"
+        }
+    ]
+}
