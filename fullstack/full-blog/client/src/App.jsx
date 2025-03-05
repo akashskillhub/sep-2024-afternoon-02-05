@@ -56,20 +56,25 @@ const App = () => {
     }
   }, [removeBlogSuccess])
 
-  return <>
+  return <div className='container'>
     <ToastContainer />
-    <form onSubmit={formik.handleSubmit}>
-      <input type="text" {...formik.getFieldProps("title")} />
-      <input type="text" {...formik.getFieldProps("desc")} />
-      <input type="text" {...formik.getFieldProps("hero")} />
-      {
-        selectedBlog
-          ? <button type='submit'>update</button>
-          : <button type='submit'>add</button>
-      }
-    </form>
+    <div class="card my-5">
+      <div class="card-body">
+
+        <form onSubmit={formik.handleSubmit}>
+          <input className='form-control my-2' type="text" {...formik.getFieldProps("title")} />
+          <input className='form-control my-2' type="text" {...formik.getFieldProps("desc")} />
+          <input className='form-control my-2' type="text" {...formik.getFieldProps("hero")} />
+          {
+            selectedBlog
+              ? <button className='btn btn-primary' type='submit'>update</button>
+              : <button className='btn btn-primary' type='submit'>add</button>
+          }
+        </form>
+      </div>
+    </div>
     {
-      data && <table border={1}>
+      data && <table className='table table-bordered'>
         <thead>
           <tr>
             <th>title</th>
@@ -87,15 +92,15 @@ const App = () => {
                 <img src={item.hero} height={50} alt={item.hero} />
               </td>
               <td>
-                <button onClick={e => setSelectedBlog(item)}>edit</button>
-                <button onClick={e => removeBlog(item._id)}>delete</button>
+                <button className='btn btn-warning' onClick={e => setSelectedBlog(item)}>edit</button>
+                <button className='btn btn-danger' onClick={e => removeBlog(item._id)}>delete</button>
               </td>
             </tr>)
           }
         </tbody>
       </table>
     }
-  </>
+  </div>
 }
 
 export default App
