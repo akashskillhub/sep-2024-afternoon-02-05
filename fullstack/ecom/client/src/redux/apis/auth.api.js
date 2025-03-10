@@ -16,6 +16,10 @@ export const authApi = createApi({
                         body: userData
                     }
                 },
+                transformResponse: data => {
+                    localStorage.setItem("user", JSON.stringify(data.result))
+                    return data.result
+                }
             }),
             userSignOut: builder.mutation({
                 query: userData => {
@@ -25,6 +29,10 @@ export const authApi = createApi({
                         body: userData
                     }
                 },
+                transformResponse: data => {
+                    localStorage.removeItem("user")
+                    return data.result
+                }
             }),
 
             sellerSignUp: builder.mutation({

@@ -2,7 +2,11 @@ const {
     getAllProducts,
     getAllSellers,
     publishUnpublishProduct,
-    blockUnblockSeller
+    blockUnblockSeller,
+    getAllOrders,
+    updateOrderStatus,
+    getAllUsers,
+    blockUnblockUser
 } = require("../controllers/admin.controller")
 
 const router = require("express").Router()
@@ -13,4 +17,11 @@ router
 
     .patch("/product-update/:pid", publishUnpublishProduct)
     .patch("/seller-update/:sid", blockUnblockSeller)
+    .get("/orders", getAllOrders)
+
+    .patch("/update-order-status/:pid", updateOrderStatus)
+    .get("/users", getAllUsers)
+    .patch("/update-user-account/:uid", blockUnblockUser)
+
+
 module.exports = router

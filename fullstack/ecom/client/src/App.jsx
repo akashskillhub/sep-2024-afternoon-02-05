@@ -22,6 +22,10 @@ import AllSellers from './pages/admin/AllSellers'
 import AllProducts from './pages/admin/AllProducts'
 import AllUsers from './pages/admin/AllUsers'
 import AllOrders from './pages/admin/AllOrders'
+import UserProtected from './components/user/UserProtected'
+import UserLayout from './components/user/UserLayout'
+import OrderHistory from './pages/user/OrderHistory'
+import UserProfile from './pages/user/UserProfile'
 
 const App = () => {
   return <>
@@ -36,8 +40,8 @@ const App = () => {
           <Route path='user-login' element={<UserLogin />} />
           <Route path='admin-login' element={<AdminLogin />} />
           <Route path='cart' element={<Cart />} />
-          <Route path='checkout' element={<Checkout />} />
-          <Route path='success' element={<Success />} />
+          <Route path='checkout' element={<UserProtected> <Checkout /> </UserProtected>} />
+          <Route path='success' element={<UserProtected><Success /> </UserProtected>} />
         </Route>
 
         <Route path='/seller' element={<SellerProtected> <SellerLayout /> </SellerProtected>}>
@@ -50,6 +54,11 @@ const App = () => {
           <Route path='products' element={<AllProducts />} />
           <Route path='users' element={<AllUsers />} />
           <Route path='orders' element={<AllOrders />} />
+        </Route>
+
+        <Route path='/user' element={<UserProtected> <UserLayout /> </UserProtected>}>
+          <Route index element={<OrderHistory />} />
+          <Route path='profile' element={<UserProfile />} />
         </Route>
 
         <Route path='*' element={<h1>Page Not Found</h1>} />

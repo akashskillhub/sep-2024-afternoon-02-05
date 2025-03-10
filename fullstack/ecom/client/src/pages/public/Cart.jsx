@@ -61,6 +61,8 @@ const Cart = () => {
                         </div>
                     </div>
                 </div>
+                <Link to="/checkout" type="button" class="btn btn-primary my-3 w-100">Checkout</Link>
+
             </div>
         </div>
     </div>

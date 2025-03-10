@@ -50,15 +50,61 @@ export const adminApi = createApi({
                 },
                 invalidatesTags: ["product"]
             }),
+            userOrders: builder.query({
+                query: arg => {
+                    return {
+                        url: "/orders",
+                        method: "GET",
+                        params: arg
+                    }
+                },
+                providesTags: ["order"]
+            }),
+
+            updateOrder: builder.mutation({
+                query: orderData => {
+                    return {
+                        url: "/update-order-status/" + orderData._id,
+                        method: "PATCH",
+                        body: orderData
+                    }
+                },
+                invalidatesTags: ["order"]
+            }),
 
 
+            getUsers: builder.query({
+                query: arg => {
+                    return {
+                        url: "/users",
+                        method: "GET",
+                        params: arg
+                    }
+                },
+                providesTags: ["user"]
+            }),
+            updateUser: builder.mutation({
+                query: userData => {
+                    return {
+                        url: "/update-user-account/" + userData._id,
+                        method: "PATCH",
+                        body: userData
+                    }
+                },
+                invalidatesTags: ["user"]
+            }),
         }
     }
 })
 
 export const {
+    useLazyUserOrdersQuery,
     useLazyGetAdminProductsQuery,
     useLazyGetAdminSellersQuery,
     useProductUpdateMutation,
-    useSellerAccountUpdateMutation
+    useSellerAccountUpdateMutation,
+
+    useUpdateOrderMutation,
+    useLazyGetUsersQuery,
+    useUpdateUserMutation
 } = adminApi

@@ -5,6 +5,7 @@ import cartSlice from "./slices/cart.slice";
 import { sellerApi } from "./apis/seller.api";
 import { adminApi } from "./apis/admin.api";
 import { publicApi } from "./apis/public.api";
+import { userApi } from "./apis/user.api";
 
 
 const reduxStore = configureStore({
@@ -13,6 +14,7 @@ const reduxStore = configureStore({
         [sellerApi.reducerPath]: sellerApi.reducer,
         [adminApi.reducerPath]: adminApi.reducer,
         [publicApi.reducerPath]: publicApi.reducer,
+        [userApi.reducerPath]: userApi.reducer,
         auth: authSlice,
         cart: cartSlice,
     },
@@ -21,7 +23,8 @@ const reduxStore = configureStore({
         authApi.middleware,
         sellerApi.middleware,
         adminApi.middleware,
-        publicApi.middleware
+        publicApi.middleware,
+        userApi.middleware,
     ]
 })
 

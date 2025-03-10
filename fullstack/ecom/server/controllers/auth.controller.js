@@ -9,11 +9,44 @@ const Admin = require("../models/Admin")
 const sendEmail = require("../utils/email")
 
 const { differenceInSeconds } = require("date-fns")
+const { OAuth2Client } = require("google-auth-library")
+const User = require("../models/User")
 
 exports.continueWithGoogle = asynchandler(async (req, res) => {
-    res.json({ message: "user login success" })
+    const { credential } = req.body
+    const client = new OAuth2Client({ clientId: process.env.GOOGLE_CLIENT_ID })
+    const googleData = await client.verifyIdToken({ idToken: credential })
+    const { email, name, picture } = googleData.payload
+
+    const result = await User.findOne({ email })
+    if (result) {
+
+        const token = jwt.sign({ _id: result._id }, process.env.JWT_KEY)
+        res.cookie("USER", token, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true, secure: false })
+
+        res.json({
+            message: "user login success", result: {
+                name: result.name,
+                email: result.email,
+                picture: result.picture,
+            }
+        })
+    } else {
+        const userData = await User.create({ name, email, picture })
+        const token = jwt.sign({ _id: userData._id }, process.env.JWT_KEY)
+        res.cookie("USER", token, { maxAge: 1000 * 60 * 60 * 24, httpOnly: true, secure: false })
+        res.json({
+            message: "user register success", result: {
+                name: userData.name,
+                email: userData.email,
+                picture: userData.picture,
+            }
+        })
+    }
+
 })
 exports.userLogout = asynchandler(async (req, res) => {
+    res.clearCookie("USER")
     res.json({ message: "user logout success" })
 })
 
