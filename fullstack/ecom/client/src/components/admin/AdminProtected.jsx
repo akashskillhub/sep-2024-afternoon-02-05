@@ -5,5 +5,4 @@ const AdminProtected = ({ children }) => {
     const { admin } = useSelector(state => state.auth)
     return admin ? children : <Navigate to="/admin-login" />
 }
-
 export default AdminProtected

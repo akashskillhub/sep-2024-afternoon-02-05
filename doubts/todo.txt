@@ -1,0 +1,19 @@
+pure function
+controlled vs un controlled inputs
+higher-order component (HOC)
+
+useEffect
+loops -> forof map ...
+localStorage vs Cookie
+clsx
+routing
+protected
+redux actions
+... rest spread
+error boundary
+lazy loading
+
+
+diff => middleware vs controller 
+multer
+otp auth
