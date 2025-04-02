@@ -2,7 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 export const authApi = createApi({
     reducerPath: "authApi",
-    baseQuery: fetchBaseQuery({ baseUrl: `https://blog-myqb.onrender.com/api/auth` }),
+    // baseQuery: fetchBaseQuery({ baseUrl: `https://blog-myqb.onrender.com/api/auth` }),
+    baseQuery: fetchBaseQuery({ baseUrl: `${import.meta.env.VITE_BACKEND_URL}/api/auth` }),
     endpoints: (builder) => {
         return {
             register: builder.mutation({
@@ -41,9 +42,18 @@ export const authApi = createApi({
                     return data.result
                 }
             }),
+            oauth: builder.mutation({
+                query: userData => {
+                    return {
+                        url: "/oauth",
+                        method: "POST",
+                        body: userData
+                    }
+                },
+            }),
 
         }
     }
 })
 
-export const { useLoginMutation, useLogoutMutation, useRegisterMutation } = authApi
+export const { useLoginMutation, useLogoutMutation, useRegisterMutation, useOauthMutation } = authApi

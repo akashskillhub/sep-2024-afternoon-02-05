@@ -17,6 +17,7 @@ const Protected = lazy(() => import('./components/Protected'))
 
 
 import { ErrorBoundary } from "react-error-boundary"
+import OAuth from './pages/OAuth'
 const Learnref = lazy(() => import('./pages/Learnref'))
 export const StateContext = createContext()
 const App = () => {
@@ -44,6 +45,7 @@ const App = () => {
         <Route path='login' element={<ErrorBoundary resetKeys={[location.pathname]} FallbackComponent={ErrorFeedback}><Login /></ErrorBoundary>} />
         <Route path='account' element={<ErrorBoundary resetKeys={[location.pathname]} FallbackComponent={ErrorFeedback}><Protected> <Dashboard /> </Protected></ErrorBoundary>} />
         <Route path='ref' element={<ErrorBoundary resetKeys={[location.pathname]} FallbackComponent={ErrorFeedback}><Learnref /></ErrorBoundary>} />
+        <Route path='oauth' element={<ErrorBoundary resetKeys={[location.pathname]} FallbackComponent={ErrorFeedback}><OAuth /></ErrorBoundary>} />
       </Route>
       <Route path='*' element={<h1>Page Not Found</h1>} />
     </Routes>

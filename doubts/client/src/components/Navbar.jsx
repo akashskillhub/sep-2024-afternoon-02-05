@@ -18,6 +18,7 @@ const Navbar = () => {
         <p><Link to="/register">Register</Link></p>
         <p><Link to="/login">login</Link></p>
         <p><Link to="/ref">ref</Link></p>
+        <p><Link to="/oauth">oauth</Link></p>
     </>
 }
 export default Navbar
